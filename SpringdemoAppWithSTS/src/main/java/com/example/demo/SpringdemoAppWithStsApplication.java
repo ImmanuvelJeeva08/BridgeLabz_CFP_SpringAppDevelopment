@@ -6,7 +6,7 @@
  * @since  : 13-09-2021
  *
  **************************************************************************************************************/
-package com.example.springdemoappwithsts;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
