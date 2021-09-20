@@ -1,8 +1,8 @@
 /*************************************************************************************************************
  *
- * UC2 : Add Logger to Log Messages
- * 	   - Use Built In SLF4J
- * 	   – Simple Logging Framework
+ *  UC3 : Using Employee Bean and Department Bean, demonstrate Dependency Injection
+ *   			Note – EmployeeBean and DepartBean are both Component as identified by Annotation and their
+ *   				   corresponding Objects retrieved using Application Context
  *
  * @author : IMMANUVEL JEEVA
  * @since  : 13.09.2021
@@ -32,5 +32,16 @@ public class SpringConceptApplication {
         ApplicationContext context = SpringApplication.run(SpringConceptApplication.class, args);
         logger.debug("Checking Context: {}", context.getBean(DemoBean.class));
         logger.debug("\n*** Example Using @Autowire annotation on property ***");
+
+        /**
+         * Purpose : Creating the EmployeeBean object dynamically
+         Setting the employee id and employee name
+         Displaying the EmployeeBean details using the showEmployeeDetails().
+         */
+
+        EmployeeBean employeeBean = context.getBean(EmployeeBean.class);
+        employeeBean.setEid(104);
+        employeeBean.setEname("Spring Framework");
+        employeeBean.showEmployeeDetails();
     }
 }
